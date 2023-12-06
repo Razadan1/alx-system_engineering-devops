@@ -1,2 +1,3 @@
 0-current working directory
-1-listit
+1-listi
+2-bring me homet
