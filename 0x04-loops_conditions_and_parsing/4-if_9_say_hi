@@ -7,7 +7,7 @@ while [ $i -lt 10 ]
 do
     if ((i == 8))
     then
-        echo "Hi"
+        echo -e "Best School \n Hi"
     else
         echo "Best School"
     fi
