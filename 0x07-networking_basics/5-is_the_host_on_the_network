@@ -3,8 +3,9 @@
 
 if [ $# -eq 0 ]
 then
-    echo "$0 {IP_ADDRESS}"
-    exit 1
+    echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
+else
+    IP_ADDRESS=$1
+    ping -c 5 $IP_ADDRESS
 fi
-IP_ADDRESS=$1
-pings -c 5 $IP_ADDRESS
+
