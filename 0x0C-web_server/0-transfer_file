@@ -14,7 +14,7 @@ SSH_PATH="$4"
 scp -o StrictHostKeyChecking=no -i "$SSH_PATH" "$FILE_PATH "$USER@$IP:~/"
 
 if [$? -eq 0]; then
-	echo "File transfer successful!"
+	echo "FILE TRASNFER SUCCESSFULL!"
 else
-	echo "File transfer failed."
+	echo "FILE TRANSFER FAILED"
 fi
