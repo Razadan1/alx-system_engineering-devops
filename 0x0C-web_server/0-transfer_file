@@ -6,12 +6,12 @@ then
 		exit 1
 fi
 
-FILE_PATH="$1"
-IP="$2"
-USER="$3"
-SSH_PATH="$4"
+FILE_PATH=$1
+IP=$2
+USER=$3
+SSH_PATH=$4
 
-scp -o StrictHostKeyChecking=no -i "$SSH_PATH" "$FILE_PATH "$USER@$IP:~/"
+scp -o "StrictHostKeyChecking=no" -i "$SSH_PATH" "$FILE_PATH" "$USER@$IP:~/"
 
 if [$? -eq 0]; then
 	echo "FILE TRASNFER SUCCESSFULL!"
