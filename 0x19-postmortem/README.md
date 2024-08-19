@@ -19,7 +19,7 @@ Root Cause: The root cause was an exhausted database connection pool due to a co
 ## Root Cause and Resolution
 ### Root Cause:
 The root cause of the outage was a misconfiguration in the database connection pool settings. The connection pool was set to a maximum of 10 connections, which was insufficient given the increased traffic following a recent marketing campaign. As more users accessed the application, the connection pool quickly reached its limit, and all available connections were consumed. This left no connections available for new requests, resulting in a "Service Unavailable" error for all users.
-![Database Issue](https://cdn2.iconfinder.com/data/icons/data-23/73/199-512.png)
+![Database Issue](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAIa4G8wzFIcC5UxIJlZ08xTK3wxqdEglXaw&s)
 
 ### Resolution:
 The issue was resolved by increasing the connection pool size to 50 connections, which provided enough capacity to handle the increased user load. The application was then restarted, allowing the changes to take effect, and restoring full functionality to the service. After monitoring [the system for an additional hour, no further issues were observed, and the incident was deemed resolved.
