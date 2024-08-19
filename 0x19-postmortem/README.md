@@ -1,5 +1,6 @@
 # Postmortem: Outage of "Quiz Quest" Application
 ## Issue Summary
+![Technical Issue](https://media.designrush.com/articles/231250/conversions/it-issues-details.jpg)
 *Duration:* August 12, 2024, 14:00 - 16:30 UTC (2.5 hours)
 Impact: The "Quiz Quest" application experienced a full outage, preventing 100% of users from accessing JAMB, WAEC, and aptitude practice questions. Users were met with a "Service Unavailable" error when trying to access the app, resulting in a complete loss of functionality during the outage.
 Root Cause: The root cause was an exhausted database connection pool due to a configuration error in the connection pool settings, which caused all available connections to be consumed, leaving none for new user requests.
@@ -18,9 +19,11 @@ Root Cause: The root cause was an exhausted database connection pool due to a co
 ## Root Cause and Resolution
 ### Root Cause:
 The root cause of the outage was a misconfiguration in the database connection pool settings. The connection pool was set to a maximum of 10 connections, which was insufficient given the increased traffic following a recent marketing campaign. As more users accessed the application, the connection pool quickly reached its limit, and all available connections were consumed. This left no connections available for new requests, resulting in a "Service Unavailable" error for all users.
+![Database Issue](https://cdn2.iconfinder.com/data/icons/data-23/73/199-512.png)
 
 ### Resolution:
-The issue was resolved by increasing the connection pool size to 50 connections, which provided enough capacity to handle the increased user load. The application was then restarted, allowing the changes to take effect, and restoring full functionality to the service. After monitoring the system for an additional hour, no further issues were observed, and the incident was deemed resolved.
+The issue was resolved by increasing the connection pool size to 50 connections, which provided enough capacity to handle the increased user load. The application was then restarted, allowing the changes to take effect, and restoring full functionality to the service. After monitoring [the system for an additional hour, no further issues were observed, and the incident was deemed resolved.
+![Issue Resolving Database]()](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjQDFVyxL2pohWnUKTdvYO2-2ZS2pKKJGkVg&s)
 
 Corrective and Preventative Measures
 ## Improvements/Fixes:
@@ -28,6 +31,7 @@ Corrective and Preventative Measures
 Increase Connection Pool Size: Ensure the connection pool size is appropriately configured to handle peak user load.
 Load Testing: Perform regular load testing to simulate high-traffic scenarios and ensure the system can handle the expected number of users.
 Monitoring Enhancements: Implement more granular monitoring of the database connection pool to detect and alert on high usage before it reaches a critical level.
+![Fixing](https://miro.medium.com/v2/resize:fit:1400/1*RH0EOOfjRw3nr7vrhka4Yw.png)
 ### Tasks:
 
 Patch Connection Pool Configuration: Update the connection pool configuration in the production environment to handle at least 50 connections.
