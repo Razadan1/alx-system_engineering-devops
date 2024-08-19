@@ -23,7 +23,7 @@ The root cause of the outage was a misconfiguration in the database connection p
 
 ### Resolution:
 The issue was resolved by increasing the connection pool size to 50 connections, which provided enough capacity to handle the increased user load. The application was then restarted, allowing the changes to take effect, and restoring full functionality to the service. After monitoring [the system for an additional hour, no further issues were observed, and the incident was deemed resolved.
-![Issue Resolving Database]()](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjQDFVyxL2pohWnUKTdvYO2-2ZS2pKKJGkVg&s)
+![Issue Resolving Database](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjQDFVyxL2pohWnUKTdvYO2-2ZS2pKKJGkVg&s)
 
 Corrective and Preventative Measures
 ## Improvements/Fixes:
@@ -39,4 +39,5 @@ Patch Connection Pool Configuration: Update the connection pool configuration in
 *Conduct Load Testing:* Schedule a load testing session to ensure the new configuration can handle peak traffic.
 Review Incident Response Procedure: Update the incident response playbook to include steps for quickly identifying and addressing database connection issues.
 Deploy Monitoring Dashboards: Create and deploy dashboards to visualize connection pool usage in real-time for better monitoring.
+![Tasks](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPkf1jr3OBYiUHTaJfz4xh-cLVzVGicWxsyQ&s)
 By addressing these tasks, the likelihood of a similar issue occurring in the future will be significantly reduced.
