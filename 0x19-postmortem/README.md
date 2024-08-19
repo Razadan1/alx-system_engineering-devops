@@ -19,6 +19,7 @@ Root Cause: The root cause was an exhausted database connection pool due to a co
 ## Root Cause and Resolution
 ### Root Cause:
 The root cause of the outage was a misconfiguration in the database connection pool settings. The connection pool was set to a maximum of 10 connections, which was insufficient given the increased traffic following a recent marketing campaign. As more users accessed the application, the connection pool quickly reached its limit, and all available connections were consumed. This left no connections available for new requests, resulting in a "Service Unavailable" error for all users.
+
 ![Database Issue](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAIa4G8wzFIcC5UxIJlZ08xTK3wxqdEglXaw&s)
 
 ### Resolution:
